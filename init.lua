@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_config = require "configs.lazy"
 
 -- set snippet location before loading plugs
-vim.g.lua_snippets_path = "./snippets/"
+vim.g.lua_snippets_path = vim.fn.stdpath("config") .. "/snippets"
 
 -- load plugins
 require("lazy").setup({
