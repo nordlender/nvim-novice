@@ -12,9 +12,9 @@ local fmta = require("luasnip.extras.fmt").fmta
 
 
 local void_tags = {
-	"area", "base", "br", "col",
-  "embed", "hr", "img", "input",
-  "link", "meta", "source", "track", "wbr"
+	area = true, base = true, br = true, col = true,
+	embed = true, hr = true, img = true, input = true,
+	link = true, meta = true, source = true, track = true, wbr = true,
 }
 
 -- function: returns closing tag if not void

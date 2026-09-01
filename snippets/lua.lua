@@ -22,18 +22,16 @@ local fmta = require("luasnip.extras.fmt").fmta
 
 ---@param mode_str modeString
 local map_filter_args = function(mode_str)
-	local ret = mode_str
-	local p, n = ret:gsub("[vsx]", "1")
-	if mode_str:match("v") or n > 1 then
-		ret = p:gsub(string.rep("1", n), "v")
+	local collapse_v = mode_str:find("v") ~= nil or select(2, mode_str:gsub("[vsx]", "")) > 1
+	local has_bang = mode_str:find("!") ~= nil
+
+	local ret = mode_str:gsub("!", "")
+	if collapse_v then
+		ret = ret:gsub("[vsx]", "") .. "v"
 	end
-	n = 0
-	p, n = ret:gsub("!", "1")
-	if n > 0 then
-		p, n = p:gsub("[ic]", "1")
-		ret = p:gsub(string.rep("1", n), "ic")
+	if has_bang then
+		ret = ret:gsub("[ic]", "") .. "ic"
 	end
-	ret = p
 	return ret
 end
 ---@param mode_str modeString
@@ -55,7 +53,6 @@ local map_get_modes = function(_, snip)
 	local mode_str = ""
 	local cmode = snip.captures[1] -- capture modes
 	local cbang = snip.captures[3] -- if [map] !
-	print(cmode, type(cmode))
 	cmode = (cmode ~= nil and cmode) or ""
 	cbang = (cbang ~= nil and cbang) or ""
 

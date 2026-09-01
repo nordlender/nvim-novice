@@ -43,7 +43,7 @@ local autosnippets = {
 	s({ trig = "ctp", name = "parencite", condition = not_ismath, priority = 10 }, {
 		t("\\parencite{"), i(1), t("}")
 	}),
-	s({ trig = "ctt", name = "parencite", condition = not_ismath, priority = 10 }, {
+	s({ trig = "ctt", name = "textcite", condition = not_ismath, priority = 10 }, {
 		t("\\textcite{"), i(1), t("}")
 	}),
 	s({ trig = "bf", name = "mathbf", condition = ismath, priority = 10 }, {
