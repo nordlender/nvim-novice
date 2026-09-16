@@ -87,6 +87,9 @@ return {
 			"DiffviewFocusFiles",
 			"DiffviewFileHistory",
 		},
+		opts = {
+			enhanced_diff_hl = true,
+		}
 	},
 
   -- {
