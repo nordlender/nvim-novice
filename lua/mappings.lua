@@ -41,7 +41,7 @@ vim.keymap.set("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
 vim.keymap.set("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
 -- vim.keymap.set({ "i", "s" }, "<tab>", "<Plug>luasnip-jump-next", {})
 vim.keymap.set({ "i", "s" }, "<tab>", function()
-	if require("luasnip").jumpable(1) then 
+	if require("luasnip").jumpable(1) then
 		vim.schedule(function() require("luasnip").jump(1) end)
 	else
 		return "<tab>"
@@ -83,6 +83,13 @@ vim.keymap.set({ "n", "t" }, "<A-r>", function()
     clear_cmd = false,
   }
 end, { desc = "Run current Python file in vertical split terminal" })
+
+
+-- diff
+-- DiffviewOpen has no CR after to allow adding arg
+vim.keymap.set('n', '<leader>df', ":DiffviewOpen ", { desc = 'Diffview: open' })
+vim.keymap.set('n', '<leader>dx', ":DiffviewClose<CR>", { desc = 'Diffview: close' })
+vim.keymap.set('n', '<leader>dn', ":DiffviewToggleFiles<CR>", { desc = 'Diffview: toggle files' })
 
 
 -- open config

@@ -39,7 +39,7 @@ return {
 						-- require("luasnip.loaders.from_lua").lazy_load({ paths = { "./snippets" } })
 					end,
 				},
-				opts = { 
+				opts = {
 					history = true, updateevents = "TextChanged,TextChangedI",
 					enable_autosnippets = true
 				},
@@ -77,6 +77,17 @@ return {
   	},
   	branch = "main",
   },
+
+	{
+		"sindrets/diffview.nvim",
+		cmd = {
+			"DiffviewOpen",
+			"DiffviewClose",
+			"DiffviewToggleFiles",
+			"DiffviewFocusFiles",
+			"DiffviewFileHistory",
+		},
+	},
 
   -- {
   --   "L3MON4D3/LuaSnip",

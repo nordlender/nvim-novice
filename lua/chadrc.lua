@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "bearded-arc",
+  theme = "everblush",
   -- bearded-arc solarized_osaka flexoki everblush kanagawa
   -- gatekeeper hiberbee rosepine tokyodark
 
