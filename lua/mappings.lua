@@ -14,6 +14,13 @@ vim.keymap.set("i", "jk", "<ESC>", { desc = "Escape insert mode" })
 -- Toggles
 vim.keymap.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "Toggle line number" })
 vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "Toggle relative number" })
+vim.keymap.set("n", "<leader>lh", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
+vim.keymap.set("n", "<leader>dw", function()
+  local current = vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = not current })
+end, { desc = "Toggle diagnostic virtual text" })
 
 
 -- Windows

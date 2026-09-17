@@ -12,6 +12,7 @@ o.relativenumber = true
 o.conceallevel = 2 -- SET ME
 o.showbreak = "> "
 
+o.expandtab = false -- look up
 o.tabstop = 2
 o.shiftwidth = 2
 o.shiftround = true
@@ -20,7 +21,6 @@ o.shiftround = true
 o.autoindent = true
 o.copyindent = true
 o.preserveindent = false -- set?
-o.expandtab = false -- look up
 
 o.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 -- add yours here!
